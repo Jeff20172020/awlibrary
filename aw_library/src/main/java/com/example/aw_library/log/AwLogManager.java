@@ -18,7 +18,7 @@ public class AwLogManager {
         this.logConfig = config;
         this.printers = new ArrayList<>(Arrays.asList(printers));
         if ( this.printers.size() == 0) {
-            this.printers.add(new AWConsoleLogPrinter());
+            this.printers.add(new AwConsoleLogPrinter());
         }
     }
 
@@ -26,6 +26,13 @@ public class AwLogManager {
         instance = new AwLogManager(config, printers);
     }
 
+
+
+    public void addPrinter(AwLogPrinter printer){
+        if(printers!=null){
+            printers.add(printer);
+        }
+    }
 
     public static AwLogManager getInstance() {
         return instance;

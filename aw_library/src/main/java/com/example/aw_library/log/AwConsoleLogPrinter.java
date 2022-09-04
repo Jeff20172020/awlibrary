@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-public class AWConsoleLogPrinter implements AwLogPrinter {
+public class AwConsoleLogPrinter implements AwLogPrinter {
     @Override
     public void print(@NonNull AwLogConfig config, int level, String tag, String content) {
         if (content != null) {
