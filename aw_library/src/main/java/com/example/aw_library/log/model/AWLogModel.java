@@ -24,7 +24,7 @@ public class AWLogModel {
     }
 
     public String getFlattened() {
-        return format(milliTime) + "|" + level + "|" + tag + "|:";
+        return format(milliTime) + " | " + level + "|" + tag + " |:";
     }
 
     private String format(long milliTime) {

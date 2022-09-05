@@ -15,6 +15,9 @@ public class AwLogStackTraceFormatter implements AwLogFormatter<StackTraceElemen
 
                     if (i == 0) {
                         builder.append("\nstackTrace--")
+                                .append("\n")
+                                .append("\t-")
+                                .append(data[i].toString())
                                 .append("\n");
                     } else if (i != data.length - 1) {
                         builder.append("\t-")

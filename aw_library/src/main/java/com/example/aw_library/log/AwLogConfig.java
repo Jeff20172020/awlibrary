@@ -17,7 +17,7 @@ public abstract class AwLogConfig {
     }
 
     public int getStackDepth() {
-        return 10;
+        return Integer.MAX_VALUE;
     }
 
     public String getGlobalTag() {
