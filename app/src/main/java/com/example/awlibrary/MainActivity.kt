@@ -5,6 +5,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aw_library.log.*
 import com.google.gson.Gson
+import com.taobao.sophix.SophixManager
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
     lateinit var viewPrinterProvider: AwViewPrinterProvider
@@ -14,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+//        SophixManager.getInstance().queryAndLoadNewPatch()
 
         AwLogManager.init(object : AwLogConfig() {
 
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         val awViewPrinter = AwViewPrinter(this)
         AwLogManager.getInstance().addPrinter(awViewPrinter)
+        AwLogManager.getInstance().addPrinter(AwFilePrinter.getInstance(externalCacheDir?.absolutePath+ File.separator+"log",1000L))
 
 
         viewPrinterProvider = awViewPrinter.viewPrinterProvider

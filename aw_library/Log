@@ -1,0 +1,20 @@
+1. 日志工具
+    组成部分：
+        AwLogManager  日志管理类，复制日志工具初始化，内部持有日志配置信息
+        AwLogConfig 日志配置信息类，内部保留线程信息、堆栈信息打印配置
+        AwLog  日志打印类
+        AwLogPrinter  日志打印抽象接口
+            --AwConsoleLogPrinter  控制台日志打印
+            --AwViewPrinter 可视化日志打印
+        AwLogFormatter  日志信息格式化抽象接口，主要用于格式化线程信息和堆栈信息
+            --AwLogThreadFormatter 日志线程信息格式化
+            -- AwLogStackTraceFormatter 日志堆栈信息格式化
+
+
+
+ 能够打印堆栈信息
+ 支持任何数据类型的打印
+ 能够实现日志可视化
+ 能够实现文件打印模块
+ 支持不同打印器的插拔
+
